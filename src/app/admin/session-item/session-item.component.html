@@ -1,0 +1,36 @@
+<!-- <h2> {{FIRSTSESSION.name}} </h2>
+<div> {{FIRSTSESSION.track}} </div>
+<div> {{FIRSTSESSION.date | date:'MMMM d, y'}} </div>
+<div> {{FIRSTSESSION.local}} </div>
+<div> {{FIRSTSESSION.participants}} </div>
+ <div [innerText]="name"></div> 
+<div>
+    <a class="delete"> Details </a>
+    <a *ngIf="FIRSTSESSION.participants < 20 && !isCompleted" class="inscrire" (click)="event()"> Inscription </a>
+    <a class="delete" (click)="delete(FIRSTSESSION.id)">Suppression</a>
+    <a [routerLink]="['../edit', FIRSTSESSION.id]" routerLinkActive="active" class="inscrire">
+        Modification
+    </a>
+    <a class="partager"> Partager </a>
+</div> -->
+
+<!-- <div [style.color]="color">{{color}}</div>
+<div [ngStyle]="{'color':color}"> TEST </div> -->
+
+<div>
+    <h2>{{FIRSTSESSION.name}} </h2>
+    <div> {{FIRSTSESSION.track}} </div>
+    <div> {{FIRSTSESSION.date | date:'MMMM d, y'}} </div>
+    <div> {{FIRSTSESSION.local}} </div>
+    <div> {{FIRSTSESSION.participants}} </div>
+    <!-- <div [innerText]="name"></div> -->
+    <div>
+        <a class="delete"> Details </a>
+        <a *ngIf="FIRSTSESSION.participants < 20 && !isCompleted" class="inscrire" (click)="event()"> Inscription </a>
+        <a class="delete" (click)="delete(FIRSTSESSION.id)">Suppression</a>
+        <a [routerLink]="['../edit', FIRSTSESSION.id]" routerLinkActive="active" class="inscrire">
+            Modification
+        </a>
+        <a class="partager"> Partager </a>
+    </div>
+</div>

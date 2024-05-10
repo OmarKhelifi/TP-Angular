@@ -1,0 +1,52 @@
+<section>
+    <header>
+        <h2>Ajouter une session de formation</h2>
+    </header>
+    <form #form="ngForm" (ngSubmit)="addSessionItem(form)">
+        <label>Name</label>
+        <select name="name" ngModel #name=ngModel required>
+            <option value="Web">Web</option>
+            <option value="Angular et Ionic">Mobile</option>
+            <option value="Algo">Algo</option>
+        </select>
+        <br>
+        <label> Track </label>
+        <select name="track" ngModel #track=ngModel required>
+            <option value="MEAN Stack">MEAN Stack</option>
+            <option value="Angular et Ionic">Angular et Ionic</option>
+            <option value="Algo">Algo</option>
+            <option value="TEST4">TEST4</option>
+        </select>
+        <br>
+        <label>Date</label>
+        <input type="date" name="date" required ngModel #date=ngModel>
+        <div style="color: red;" *ngIf="date.invalid && date.touched">
+            <div *ngIf="date.errors?.['required']">
+                Date is required. Please
+            </div>
+        </div>
+        <label>Days</label>
+        <input type="text" name="days" required ngModel #days=ngModel>
+        <div style="color: red;" *ngIf="days.invalid && days.touched">
+            <div *ngIf="days.errors?.['required']">
+                Days is required. Please
+            </div>
+        </div>
+        <label>Location</label>
+        <input type="text" name="adress" required ngModel #l=ngModel>
+        <div style="color: red;" *ngIf="l.invalid && l.touched">
+            <div *ngIf="l.errors?.['required']">
+                Location is required. Please
+            </div>
+        </div>
+        <label>Participant</label>
+        <input type="text" name="participants" required ngModel #p=ngModel>
+        <div style="color: red;" *ngIf="p.invalid && p.touched">
+            <div *ngIf="p.errors?.['required']">
+                participant is required. Please
+            </div>
+        </div>
+        <br>
+        <input type="submit" class="btn btn-success" value="Enregistrer">
+    </form>
+</section>

@@ -1,0 +1,45 @@
+<section>
+    <h1 style="color:white;">Modifier une session de formation</h1>
+    <form>
+        <div>
+            <br>
+            <label for="name">Nom</label>
+            <input [(ngModel)]="session.name" type="text" id="name" name="name">
+        </div>
+
+        <div>
+            <br>
+            <label for="track">Formation</label>
+            <select [(ngModel)]="session.track" id="track" name="track">
+                <option *ngFor="let track of tracks" [value]="track">{{ track }}</option>
+            </select>
+        </div>
+
+        <div>
+            <br>
+            <label for="date">Date</label>
+            <input [(ngModel)]="session.date" type="date" id="date" name="date">
+        </div>
+
+        <div>
+            <br>
+            <label for="duree">Durée (en jours)</label>
+            <input [(ngModel)]="session.duree" type="number" id="duree" name="duree">
+        </div>
+
+        <div>
+            <br>
+            <label for="lieu">Lieu</label>
+            <input [(ngModel)]="session.adress" type="text" id="lieu" name="lieu">
+        </div>
+
+        <div>
+            <br>
+            <label for="participants">Participants</label>
+            <input [(ngModel)]="session.participants" type="number" id="participants" name="participants">
+        </div>
+
+        <br>
+        <button (click)="editSession(session)" class="btn btn-success" type="button">Enregistrer</button>
+    </form>
+</section>

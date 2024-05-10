@@ -1,0 +1,26 @@
+<!-- <section>
+    <header>
+        <h1>Liste des sessions de formation </h1>
+        <p class="description">Suivre les sessions que je veux participer.</p>
+    </header>
+</section><br>
+
+<div *ngFor="let session of sessionItems">
+    <app-session-item [ngClass]="{'session-web': session.name === 'Web', 'session-mobile': session.name === 'Mobile'}"
+        [FIRSTSESSION]="session"></app-session-item>
+</div> -->
+
+
+<!-- <div>Total des participants: {{ getTotalParticipants() }}</div> -->
+<!-- <div> {{display()}} </div> -->
+
+
+<header>
+    <h1> Liste des sessions de formation</h1>
+</header>
+<section>
+    <app-session-item *ngFor="let session of sessionItems"
+        [ngClass]="{'session-web': session.name === 'Web', 'session-mobile': session.name === 'Mobile'}"
+        [FIRSTSESSION]="session"></app-session-item>
+
+</section>

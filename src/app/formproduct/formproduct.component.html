@@ -1,0 +1,39 @@
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="display(form)">
+        <div class="form-group">
+            <label for="">ID</label>
+            <input type="text" name="login" class="form-control" ngModel required #l=ngModel pattern="\d+">
+            <div style="color: red;" *ngIf="l.invalid && l.touched">
+                <div *ngIf="l.errors?.['required']">ID is required. Please</div>
+            </div>
+            <div style="color: red;" *ngIf="l.errors?.['pattern'] && l.touched">
+                l'id contient des chiffre seulements. Please
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Title</label>
+            <input type="text" name="title" class="form-control" ngModel #e="ngModel" required minlength="3">
+            <div style="color: red;" *ngIf="e.invalid && e.touched">
+                <div *ngIf="e.errors?.['required']">
+                    Titel is required. Please
+                </div>
+                <div style="color: red;" *ngIf="e.errors?.['minlength'] && e.touched">
+                    le titre contient 3 chiffre minimum. Please
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Quantity</label>
+            <input type="number" name="quantity" class="form-control" ngModel #p="ngModel" required
+                pattern="[1-9][0-9]{2}">
+            <div style="color: red;" *ngIf="p.invalid && p.touched">
+                <div *ngIf="p.errors?.['required']">Quantity is required. Please</div>
+                <div style="color: red;" *ngIf="p.errors?.['pattern'] && p.touched">
+                    la Quantité contient 3 Chiffre minimum. Please
+                </div>
+            </div>
+
+        </div>
+        <button type="submit" [disabled]="form.invalid">Inscription</button>
+    </form>
+</div>
